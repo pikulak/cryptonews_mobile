@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class MainPage extends StatefulWidget {
 
   @override
-  _MainPage createState() => new _MainPage();
+  _MainPageState createState() => new _MainPageState();
 }
 
-class _MainPage extends State<MainPage> {
+class _MainPageState extends State<MainPage> {
 
   Widget _buildAppBar() {
     return new AppBar(
@@ -21,7 +21,8 @@ class _MainPage extends State<MainPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: _buildAppBar(),
-      body: new Center(),
+      body: new Center(
+      ),
     );
   }
 }
