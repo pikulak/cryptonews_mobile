@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cryptonews_mobile/ui/partials/drawer.dart';
 
 
 class MainPage extends StatefulWidget {
@@ -11,7 +12,6 @@ class _MainPageState extends State<MainPage> {
 
   Widget _buildAppBar() {
     return new AppBar(
-      backgroundColor: Colors.black,
       elevation: 0.0,
       title: new Text('Test title'),
     );
@@ -21,6 +21,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: _buildAppBar(),
+      drawer: new CryptoNewsDrawer(),
       body: new Center(
       ),
     );
