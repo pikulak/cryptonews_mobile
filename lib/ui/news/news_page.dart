@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:cryptonews_mobile/ui/partials/drawer.dart';
 
 
-class MainPage extends StatefulWidget {
+class NewsPage extends StatefulWidget {
 
   @override
-  _MainPageState createState() => new _MainPageState();
+  _NewsPageState createState() => new _NewsPageState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _NewsPageState extends State<NewsPage> {
 
   Widget _buildAppBar() {
     return new AppBar(
       elevation: 0.0,
-      title: new Text('Test title'),
+      title: new Text('News page'),
     );
   }
 
@@ -22,8 +22,7 @@ class _MainPageState extends State<MainPage> {
     return new Scaffold(
       appBar: _buildAppBar(),
       drawer: new CryptoNewsDrawer(),
-      body: new Center(
-      ),
+      body: new Center(),
     );
   }
 }
