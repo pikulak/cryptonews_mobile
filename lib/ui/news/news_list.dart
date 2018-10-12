@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cryptonews_mobile/ui/news/news_list_item.dart';
 
 
 class NewsList extends StatelessWidget {
@@ -7,14 +8,9 @@ class NewsList extends StatelessWidget {
     return Container(
       child: Scrollbar(
         child: ListView.builder(
-          itemCount: 10,
+          itemCount: 20,
           itemBuilder: (BuildContext context, int index) {
-            return Material(
-              child: ListTile(
-                leading: const Icon(Icons.event_seat),
-                title: const Text('The seat for the narrator'),
-              ),
-            );
+            return NewsListItem();
           },
         ),
       ),

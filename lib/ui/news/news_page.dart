@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cryptonews_mobile/ui/partials/drawer.dart';
+import 'package:cryptonews_mobile/ui/news/news_list.dart';
 
 
 class NewsPage extends StatefulWidget {
@@ -22,7 +23,7 @@ class _NewsPageState extends State<NewsPage> {
     return new Scaffold(
       appBar: _buildAppBar(),
       drawer: new CryptoNewsDrawer(),
-      body: new Center(),
+      body: new NewsList(),
     );
   }
 }
