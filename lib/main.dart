@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cryptonews_mobile/ui/converter/converter_page.dart';
 import 'package:cryptonews_mobile/ui/news/news_page.dart';
 
 
@@ -17,6 +18,7 @@ class CryptoNewsApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => NewsPage(),
+        '/converter': (context) => ConverterPage()
       }
     );
   }
