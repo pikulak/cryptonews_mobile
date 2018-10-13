@@ -23,10 +23,19 @@ class CryptoNewsDrawer extends StatelessWidget {
     );
   }
 
-  Widget _buildIconizedItem(String text, IconData icon){
+  Function navigateTo(BuildContext context, String routeName){
+    return () => Navigator.pushNamed(context, routeName);
+  }
+
+  Function close(BuildContext context){
+    return () => Navigator.pop(context);
+  }
+
+  Widget _buildIconizedItem(String text, IconData icon, {Function onTap}) {
     return new ListTile(
       leading: new Icon(icon),
       title: new Text(text),
+      onTap: onTap ?? onTap
     );
   }
 
@@ -55,10 +64,26 @@ class CryptoNewsDrawer extends StatelessWidget {
       child: new Column(
         children: <Widget>[
           _buildDrawerHeader(),
-          _buildIconizedItem("News", Icons.format_quote),
-          _buildIconizedItem("Converter", Icons.attach_money),
-          _buildIconizedItem("About", Icons.info),
-          _buildIconizedItem("Close", Icons.arrow_back),
+          _buildIconizedItem(
+            "News",
+            Icons.format_quote,
+            onTap: navigateTo(context, '/')
+          ),
+          _buildIconizedItem(
+            "Converter",
+            Icons.attach_money,
+            onTap: navigateTo(context, '/converter')
+          ),
+          _buildIconizedItem(
+            "About",
+            Icons.info,
+            onTap: navigateTo(context, '/about')
+          ),
+          _buildIconizedItem(
+            "Close",
+            Icons.arrow_back,
+            onTap: close(context)
+          ),
           _buildDrawerFooter()
         ],
       )
