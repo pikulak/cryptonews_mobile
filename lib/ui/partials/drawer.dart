@@ -23,12 +23,16 @@ class CryptoNewsDrawer extends StatelessWidget {
     );
   }
 
-  Function navigateTo(BuildContext context, String routeName){
-    return () => Navigator.pushNamed(context, routeName);
-  }
-
+  // Close drawer
   Function close(BuildContext context){
     return () => Navigator.pop(context);
+  }
+
+  Function navigateTo(BuildContext context, String routeName) {
+    return () {
+      close(context)();
+      return Navigator.pushNamed(context, routeName);
+    };
   }
 
   Widget _buildIconizedItem(String text, IconData icon, {Function onTap}) {
