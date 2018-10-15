@@ -17,7 +17,7 @@ class ConverterPage extends StatelessWidget {
   );
 
   Widget _buildAppBar() {
-    return new AppBar(
+    return AppBar(
       elevation: 0.0,
       title: new Text('Converter'),
     );
@@ -39,10 +39,10 @@ class ConverterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       appBar: _buildAppBar(),
-      drawer: new CryptoNewsDrawer(),
-      body: new Container(
+      drawer: CryptoNewsDrawer(),
+      body: Container(
         padding: padding,
         child: Column(
           children: [
