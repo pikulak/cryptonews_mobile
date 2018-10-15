@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:cryptonews_mobile/ui/partials/drawer.dart';
+import 'package:cryptonews_mobile/ui/converter/converter_form.dart';
 
 
-class ConverterPage extends StatefulWidget {
+class ConverterPage extends StatelessWidget {
 
-  @override
-  _ConverterPageState createState() => new _ConverterPageState();
-}
-
-class _ConverterPageState extends State<ConverterPage> {
+  final EdgeInsets padding = const EdgeInsets.symmetric(
+    horizontal: 20.0
+  );
+  final EdgeInsets descPadding = const EdgeInsets.symmetric(
+    vertical: 50.0
+  );
+  final TextStyle descStyle = const TextStyle(
+    fontSize: 17.0,
+    letterSpacing: 1.0
+  );
 
   Widget _buildAppBar() {
     return new AppBar(
@@ -17,12 +23,35 @@ class _ConverterPageState extends State<ConverterPage> {
     );
   }
 
+  Widget _buildDescription() {
+    String desc = "This tool allows you to quickly compare two cryptocurrencies. "
+                   "We use latest pricing data from CryptoCurrency API.";
+
+    return Container(
+      padding: descPadding,
+      child: Text(
+        desc,
+        style: descStyle,
+        textAlign: TextAlign.center,
+      )
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: _buildAppBar(),
       drawer: new CryptoNewsDrawer(),
-      body: new Container(),
+      body: new Container(
+        padding: padding,
+        child: Column(
+          children: [
+            _buildDescription(),
+            ConverterForm(),
+            ConverterForm()
+          ],
+        ),
+      ),
     );
   }
 }

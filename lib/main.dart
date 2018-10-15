@@ -13,6 +13,7 @@ class CryptoNewsApp extends StatelessWidget {
       theme: new ThemeData(
         brightness: Brightness.dark,
         primaryColor: new Color(0xFF323639),
+        primaryColorDark: new Color(0xFF282b2e),
         canvasColor: new Color(0xFF323639),
         accentColor: new Color(0xFF41464a),
       ),
